@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { BiMark } from "bimark";
 import yargs from "yargs";
 import {
