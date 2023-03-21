@@ -29,6 +29,12 @@ const argv = yargs(process.argv.slice(2))
       description: "Show reference bracket",
       default: false,
     },
+    rh: {
+      alias: "ref-html",
+      type: "boolean",
+      description: "Render reference as HTML",
+      default: false,
+    },
     f: {
       alias: "filter",
       type: "string",
@@ -53,7 +59,7 @@ function collectFile(path: string) {
 function renderFile(path: string) {
   const res = bimark.render(path, readFileSync(path, "utf-8"), {
     def: { showAlias: argv.da, showBrackets: argv.db },
-    ref: { showBrackets: argv.rb },
+    ref: { showBrackets: argv.rb, html: argv.rh },
   });
   if (argv.o) {
     mkdirSync((argv.o + "/" + path).split("/").slice(0, -1).join("/"), {
