@@ -1,6 +1,12 @@
 import { BiMark } from "bimark";
 import yargs from "yargs";
-import { statSync, readFileSync, readdirSync, writeFileSync } from "fs";
+import {
+  statSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync,
+  mkdirSync,
+} from "fs";
 
 const argv = yargs(process.argv.slice(2))
   .usage("Usage: bimark [options] <file|folder> [file|folder]...")
@@ -50,6 +56,9 @@ function renderFile(path: string) {
     ref: { showBrackets: argv.rb },
   });
   if (argv.o) {
+    mkdirSync((argv.o + "/" + path).split("/").slice(0, -1).join("/"), {
+      recursive: true,
+    });
     writeFileSync(argv.o + "/" + path, res);
   } else {
     console.log(res);
