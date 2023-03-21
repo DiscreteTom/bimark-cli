@@ -6,6 +6,9 @@
   "repository": "git@github.com:DiscreteTom/bimark-cli.git",
   "author": "DiscreteTom <discrete_tom@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "bimark": "^0.1.1",
     "yargs": "^17.7.1"
