@@ -120,10 +120,10 @@ bail@^2.0.0:
   resolved "https://registry.npmmirror.com/bail/-/bail-2.0.2.tgz#d26f5cd8fe5d6f832a31517b9f7c356040ba6d5d"
   integrity sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==
 
-bimark@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/bimark/-/bimark-0.1.0.tgz#a33f3937e212112ee4020ef696a47ecd82dbbbb4"
-  integrity sha512-LKv4Z/ZHdU/dIUAPcpCtZJeaUazKUlrs6iH+ytvTklbWDgyo9NcK2M3lvlJkBONabjVgKyl52HHQpuplv5aAyQ==
+bimark@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/bimark/-/bimark-0.1.1.tgz#5a9b8edec39852b2b84a3f7e04759214c55b8580"
+  integrity sha512-P3XLipUA8SzpSQEPYj813j+vyN+N6fl9I+jYnnJOiVMwcWVSfN8XDSUvgMt8P43H2rmtWe/eGR+O2YCxB9YyYw==
   dependencies:
     remark "^14.0.2"
     unist-util-visit "^4.1.2"
