@@ -43,19 +43,46 @@ const argv = yargs(process.argv.slice(2))
       description: "Output path",
       default: "",
     },
+    cs: {
+      alias: "collect-selectors",
+      type: "array",
+      description: "Query selectors when collect",
+      default: [],
+    },
+    ds: {
+      alias: "render-def-selectors",
+      type: "array",
+      description: "Query selectors when render definition",
+      default: [],
+    },
+    rs: {
+      alias: "render-ref-selectors",
+      type: "array",
+      description: "Query selectors when render reference",
+      default: [],
+    },
   })
   .parseSync();
 
 const biml = new BiML();
 
 function collectFile(path: string) {
-  biml.collect(path, readFileSync(path, "utf-8"));
+  biml.collect(path, readFileSync(path, "utf-8"), {
+    selectors: argv.cs.length == 0 ? undefined : (argv.cs as string[]),
+  });
 }
 
 function renderFile(path: string) {
   const res = biml.render(path, readFileSync(path, "utf-8"), {
-    def: { showAlias: argv.da, showBrackets: argv.db },
-    ref: { showBrackets: argv.rb },
+    def: {
+      showAlias: argv.da,
+      showBrackets: argv.db,
+      selectors: argv.ds.length == 0 ? undefined : (argv.ds as string[]),
+    },
+    ref: {
+      showBrackets: argv.rb,
+      selectors: argv.rs.length == 0 ? undefined : (argv.rs as string[]),
+    },
   });
   if (argv.o) {
     mkdirSync((argv.o + "/" + path).split("/").slice(0, -1).join("/"), {
