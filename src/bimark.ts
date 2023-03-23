@@ -43,6 +43,12 @@ const argv = yargs(process.argv.slice(2))
       description: "Filter by file suffix",
       default: ".md",
     },
+    h: {
+      alias: "html",
+      type: "boolean",
+      description: "Render as HTML",
+      default: false,
+    },
     o: {
       alias: "output",
       type: "string",
@@ -62,6 +68,7 @@ function renderFile(path: string) {
   const res = bimark.render(path, readFileSync(path, "utf-8"), {
     def: { showAlias: argv.da, showBrackets: argv.db },
     ref: { showBrackets: argv.rb, html: argv.rh },
+    output: { html: argv.h },
   });
   if (argv.o) {
     mkdirSync((argv.o + "/" + path).split("/").slice(0, -1).join("/"), {
