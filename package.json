@@ -10,7 +10,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "bimark": "^0.1.3",
+    "bimark": "^0.1.4",
     "yargs": "^17.7.1"
   },
   "bin": {
