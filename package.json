@@ -14,7 +14,7 @@
     "yargs": "^17.7.1"
   },
   "bin": {
-    "bimark": "out/main.js"
+    "bimark": "out/bimark.js"
   },
   "devDependencies": {
     "@types/node": "^18.15.5",
