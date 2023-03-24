@@ -7,7 +7,8 @@
   "author": "DiscreteTom <discrete_tom@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "yarn build --build --clean && yarn build"
   },
   "dependencies": {
     "bimark": "^0.1.4",
