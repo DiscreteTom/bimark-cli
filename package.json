@@ -11,7 +11,7 @@
     "prepublishOnly": "yarn build --build --clean && yarn build"
   },
   "dependencies": {
-    "bimark": "^0.3.6",
+    "bimark": "^0.3.7",
     "yargs": "^17.7.1"
   },
   "bin": {
