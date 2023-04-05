@@ -1,6 +1,6 @@
 {
   "name": "bimark-cli",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "out/main.js",
   "type": "module",
   "repository": "git@github.com:DiscreteTom/bimark-cli.git",
